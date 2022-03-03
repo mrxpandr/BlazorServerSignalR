@@ -13,70 +13,70 @@ namespace BlazorServerSignalR.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 1 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 2 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 3 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 4 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 5 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 6 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 7 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 8 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 9 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using BlazorServerSignalR;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 10 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using BlazorServerSignalR.Shared;
 
 #line default
@@ -90,7 +90,7 @@ using BlazorServerSignalR.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\Shared\SurveyPrompt.razor"
+#line 12 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\Shared\SurveyPrompt.razor"
        
     // Demonstrates how a parent component can supply parameters
     [Parameter]

@@ -13,83 +13,147 @@ namespace BlazorServerSignalR.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 1 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 2 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 3 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 4 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 5 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 6 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 7 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 8 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 9 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using BlazorServerSignalR;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "d:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
+#line 10 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\_Imports.razor"
 using BlazorServerSignalR.Shared;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\Pages\Index.razor"
+using Microsoft.AspNetCore.SignalR.Client;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\Pages\Index.razor"
+using Models;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Index : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 50 "D:\Marvin Ebuenga\dev\blazor\BlazorServerSignalR\Pages\Index.razor"
+       
+    private HubConnection hubConnection;
+    private List<UserMessage> userMessages = new();
+    private string usernameInput;
+    private string messageInput;
+    private bool isUserReadonly = false;
+    private bool IsConnected => hubConnection.State == HubConnectionState.Connected;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/chathub"))
+            .Build();
+        
+        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        {
+            userMessages.Add(new UserMessage { Username = user, Message = message, CurrentUser = user == usernameInput, DateSent = DateTime.Now });
+
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    private async Task Send()
+    {
+        if(!string.IsNullOrEmpty(usernameInput) && !string.IsNullOrEmpty(messageInput))
+        {
+            await hubConnection.SendAsync("SendMessage", usernameInput, messageInput);
+
+            isUserReadonly = true;
+            messageInput = string.Empty;
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if(hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -144,59 +144,6 @@
         }
       },
       {
-        "HashCode": -2022675136,
-        "Kind": "Components.Component",
-        "Name": "BlazorServerSignalR.Shared.SurveyPrompt",
-        "AssemblyName": "BlazorServerSignalR",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorServerSignalR.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": 1590021338,
-        "Kind": "Components.Component",
-        "Name": "BlazorServerSignalR.Shared.SurveyPrompt",
-        "AssemblyName": "BlazorServerSignalR",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "BlazorServerSignalR.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorServerSignalR.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1542061482,
         "Kind": "Components.Component",
         "Name": "BlazorServerSignalR.Shared.MainLayout",
@@ -289,6 +236,59 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "BlazorServerSignalR.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -2022675136,
+        "Kind": "Components.Component",
+        "Name": "BlazorServerSignalR.Shared.SurveyPrompt",
+        "AssemblyName": "BlazorServerSignalR",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorServerSignalR.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": 1590021338,
+        "Kind": "Components.Component",
+        "Name": "BlazorServerSignalR.Shared.SurveyPrompt",
+        "AssemblyName": "BlazorServerSignalR",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BlazorServerSignalR.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorServerSignalR.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
